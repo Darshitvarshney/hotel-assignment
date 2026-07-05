@@ -45,25 +45,25 @@ const HotelGrid = () => {
   return (
     <section
       id="hotels"
-      className="mx-auto max-w-7xl px-6 py-20"
+      className="w-full"
     >
-      <div className="mb-10 flex items-center justify-between font-sans">
+      <div className="mb-8 flex items-center justify-between font-sans">
 
         <div>
 
-          <h2 className="font-serif text-4xl font-semibold text-brand-emerald">
-            Featured Retreat Showcase
+          <h2 className="font-serif text-3xl font-semibold text-brand-emerald">
+            Verified Hotel Collection
           </h2>
 
-          <p className="mt-2 text-sm text-brand-charcoal-light/60 font-medium">
-            {hotels.length} luxury collections available
+          <p className="mt-1.5 text-xs text-brand-charcoal-light/60 font-medium">
+            {hotels.length} matching properties found in India
           </p>
 
         </div>
 
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {hotels.map((hotel) => (
           <HotelCard
             key={hotel.id}

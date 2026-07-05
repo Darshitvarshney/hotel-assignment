@@ -48,16 +48,28 @@ const Home = () => {
     <Layout>
       <Hero />
 
-      <SearchSection />
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid gap-8 lg:grid-cols-4 items-start">
 
-      <HotelGrid />
+          {/* Sidebar Filters */}
+          <aside className="lg:col-span-1 lg:sticky lg:top-24 z-30">
+            <SearchSection />
+          </aside>
 
-      <Pagination
-        page={currentPage}
-        totalPages={totalPages}
-        onPrevious={handlePrevious}
-        onNext={handleNext}
-      />
+          {/* Results Showcase */}
+          <main className="lg:col-span-3">
+            <HotelGrid />
+
+            <Pagination
+              page={currentPage}
+              totalPages={totalPages}
+              onPrevious={handlePrevious}
+              onNext={handleNext}
+            />
+          </main>
+
+        </div>
+      </div>
     </Layout>
   );
 };

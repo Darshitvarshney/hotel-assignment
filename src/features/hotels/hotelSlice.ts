@@ -130,8 +130,19 @@ const hotelSlice = createSlice({
 
       .addCase(fetchHotels.fulfilled, (state, action) => {
         state.loading = false;
-        state.hotels = action.payload.data;
-        state.total = action.payload.count;
+        const rawHotels = action.payload.data || [];
+
+        if (state.query.rating_min !== undefined) {
+          const minRating = Number(state.query.rating_min);
+          const filtered = rawHotels.filter(
+            (hotel: Hotel) => Number(hotel.rating) >= minRating
+          );
+          state.hotels = filtered;
+          state.total = filtered.length;
+        } else {
+          state.hotels = rawHotels;
+          state.total = action.payload.count;
+        }
       })
 
       .addCase(fetchHotels.rejected, (state, action) => {
