@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-emerald: #0F3A20;
+  --color-brand-emerald-light: #1A4D32;
+  --color-brand-emerald-dark: #072211;
+  --color-brand-gold: #C5A880;
+  --color-brand-gold-dark: #A98B62;
+  --color-brand-gold-light: #DFCDAB;
+  --color-brand-cream: #FAF9F6;
+  --color-brand-cream-dark: #F2EFEB;
+  --color-brand-charcoal: #1A2520;
+  --color-brand-charcoal-light: #2A3831;
+  
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+@utility font-serif {
+  font-family: var(--font-display);
+}
+
+@utility font-sans {
+  font-family: var(--font-sans);
+}
